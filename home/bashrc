@@ -1,0 +1,38 @@
+# PATHs
+export PATH="${PATH}:${HOME}/bin"
+
+# Aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gdc='git diff --cached'
+alias habits='history | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 20'
+
+# Tokens, like for GitHub
+for token in ${HOME}/.tokens/*; do
+  export $(basename "${token}")="$(cat "${token}")"
+done
+
+# `cdp` and `cdpo` aliases with completion
+_cd_projects() {
+  local basepath="${HOME}/projects"
+  if [[ $1 = 'cdpo' ]]; then
+    basepath="${basepath}/oss"
+  fi
+
+  pushd $basepath > /dev/null
+    _cd
+  popd > /dev/null
+
+  count=${#COMPREPLY[@]}
+  index=0
+  while [ "$index" -lt "$count" ]; do
+    COMPREPLY[$index]="${COMPREPLY[$index]}/"
+    let "index++"
+  done
+}
+function cdp()  { cd $HOME/projects/$@; }
+function cdpo() { cd $HOME/projects/oss/$@; }
+complete -F _cd_projects -o nospace cdpo
+complete -F _cd_projects -o nospace cdp
