@@ -1,5 +1,5 @@
 .PHONY: all
-all: preferences packages home
+all: preferences packages home nvim
 
 .PHONY: preferences
 preferences:
@@ -12,3 +12,7 @@ packages:
 .PHONY: home
 home:
 	(cd home && $(MAKE) all)
+
+.PHONY: nvim
+nvim:
+	(cd nvim && $(MAKE) all)

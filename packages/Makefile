@@ -1,7 +1,9 @@
-PACKAGES := neovim tmux git curl chromium-browser apt-transport-https ca-certificates
+PACKAGES := neovim tmux git curl chromium-browser apt-transport-https ca-certificates build-essential
+
+SNAPS := slack spotify
 
 .PHONY: all
-all: dist-upgrade packages docker
+all: dist-upgrade packages docker neovim slack
 
 .PHONY: dist-upgrade
 dist-upgrade:
@@ -20,3 +22,7 @@ docker:
 	sudo apt-cache policy docker-ce
 	sudo apt-get install docker-ce
 	sudo usermod -aG docker "$${USER}"
+
+.PHONY: snaps
+snaps:
+	sudo snap install $(SNAPS)
