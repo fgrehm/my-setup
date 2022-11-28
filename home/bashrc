@@ -4,14 +4,46 @@ export PATH="${PATH}:${HOME}/bin"
 # Default to nvim editor
 export EDITOR="nvim"
 
-# Aliases
-alias gs='git status'
-alias ga='git add'
-alias gap='git add --patch'
-alias gc='git commit'
-alias gp='git push'
-alias gdc='git diff --cached'
+# My own terminal habits
 alias habits='history | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 20'
+
+# Git aliases with completion
+__define_git_completion () {
+eval "
+    _git_$2_shortcut () {
+        COMP_LINE=\"git $2\${COMP_LINE#$1}\"
+        let COMP_POINT+=$((4+${#2}-${#1}))
+        COMP_WORDS=(git $2 \"\${COMP_WORDS[@]:1}\")
+        let COMP_CWORD+=1
+
+        local cur words cword prev
+        _get_comp_words_by_ref -n =: cur words cword prev
+        _git_$2
+    }
+"
+}
+__git_shortcut () {
+    type _git_$2_shortcut &>/dev/null || __define_git_completion $1 $2
+    alias $1="git $2 $3"
+    complete -o default -o nospace -F _git_$2_shortcut $1
+}
+__git_shortcut gco checkout
+__git_shortcut gd diff
+__git_shortcut gdc diff --cached
+__git_shortcut gdcw diff --cached --word-diff
+__git_shortcut gc commit -m
+__git_shortcut gca commit '--amend -C HEAD'
+__git_shortcut gcA commit '--amend -m'
+__git_shortcut gp push
+__git_shortcut ga add
+__git_shortcut gap add -p
+__git_shortcut gr reset
+__git_shortcut gsw show
+__git_shortcut gpl pull
+__git_shortcut gplr pull '--rebase'
+__git_shortcut gdw diff '--word-diff'
+alias gs='git status'
+alias gl='git lg'
 
 # Tokens, like for GitHub
 for token in ${HOME}/.tokens/*; do

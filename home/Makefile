@@ -1,5 +1,5 @@
 .PHONY: all
-all: folders bashrc tmux
+all: folders bashrc tmux git
 
 .PHONY: folders
 folders:
@@ -13,3 +13,7 @@ bashrc:
 .PHONY: tmux
 tmux:
 	[ -L ~/.tmux.conf ] && echo '.tmux.conf already symlinked' || ln -s `pwd`/tmux.conf ~/.tmux.conf
+
+.PHONY: git
+git:
+	[ -L ~/.gitconfig ] && echo '.gitconfig already symlinked' || ln -s `pwd`/gitconfig ~/.gitconfig

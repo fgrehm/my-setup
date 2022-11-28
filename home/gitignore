@@ -1,0 +1,12 @@
+.DS_Store
+.svn
+*~
+.*.swp
+.*.swo
+.rake_t_cache
+/.vagrant/
+/vendor/bundle
+.devstep/
+.bundle/
+.docker-dev/
+telepresence.log
