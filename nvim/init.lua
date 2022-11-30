@@ -437,5 +437,8 @@ cmp.setup {
   },
 }
 
+-- Custom configs
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
