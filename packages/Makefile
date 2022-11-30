@@ -1,4 +1,4 @@
-PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep
+PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep jq
 
 SNAPS := slack spotify
 CLASSIC_SNAPS := go
