@@ -1,4 +1,6 @@
--- Based on https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+-- Based on:
+--   https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+--   https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua
 
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
@@ -53,11 +55,13 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use 'mg979/vim-visual-multi' -- Multiple cursors for find and replace
+  use 'christoomey/vim-tmux-navigator'
 
   use({
     "Pocco81/auto-save.nvim",
     config = function()
       require("auto-save").setup {
+        -- TODO: increase delay to save
         -- your config goes here
         -- or just leave it empty :)
       }
@@ -141,7 +145,8 @@ vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+-- vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menuone,noinsert,noselect'
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
