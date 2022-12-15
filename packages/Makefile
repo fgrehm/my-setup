@@ -1,10 +1,9 @@
-PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep jq
-
+PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep jq restic
 SNAPS := slack spotify
 CLASSIC_SNAPS := go
 
 .PHONY: all
-all: dist-upgrade packages slack
+all: dist-upgrade packages snaps
 
 .PHONY: dist-upgrade
 dist-upgrade:

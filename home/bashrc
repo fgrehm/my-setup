@@ -36,9 +36,11 @@ __git_shortcut gr reset
 __git_shortcut gs status
 
 # Tokens, like for GitHub
-for token in ${HOME}/.tokens/*; do
-  export $(basename "${token}")="$(cat "${token}")"
-done
+if [[ -d "${HOME}/.tokens" ]]; then
+  for token in ${HOME}/.tokens/*; do
+    [[ -f "${token}" ]] && export $(basename "${token}")="$(cat "${token}")"
+  done
+fi
 
 # `cdp` and `cdpo` aliases with completion
 _cd_projects() {
