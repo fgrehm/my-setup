@@ -114,10 +114,11 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 
 -- Strip whitespace on save
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-})
+-- TODO: Make it not strip the last blank line on a file
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   pattern = { "*" },
+--   command = [[%s/\s\+$//e]],
+-- })
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
