@@ -30,3 +30,7 @@
 [diff]
 	colorMoved = zebra
 	algorithm = histogram
+[pull]
+	rebase = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/

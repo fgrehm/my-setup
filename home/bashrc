@@ -28,12 +28,12 @@ __git_shortcut gci commit -v
 __git_shortcut gco checkout
 __git_shortcut gd diff
 __git_shortcut gdc diff --cached
-__git_shortcut gl log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 __git_shortcut gp push
+__git_shortcut gplr pull --rebase
 __git_shortcut gpl pull
-__git_shortcut gplr pull '--rebase'
 __git_shortcut gr reset
 __git_shortcut gs status
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit"
 
 # Tokens, like for GitHub
 if [[ -d "${HOME}/.tokens" ]]; then
