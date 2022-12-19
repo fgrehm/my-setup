@@ -55,7 +55,6 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use 'mg979/vim-visual-multi' -- Multiple cursors for find and replace
-  use 'christoomey/vim-tmux-navigator'
 
   use({
     "Pocco81/auto-save.nvim",
