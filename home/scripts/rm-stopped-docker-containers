@@ -1,0 +1,2 @@
+#!/bin/bash
+docker rm -v $(docker ps -q -a --no-trunc)
