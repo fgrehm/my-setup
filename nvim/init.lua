@@ -1,6 +1,14 @@
 -- Based on:
 --   https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 --   https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua
+--   https://github.com/ThePrimeagen/init.lua
+
+-- TODO:
+--  * Watch https://github.com/ThePrimeagen/init.lua again
+--  * lsp-zero.nvim
+--  * change tabs to be 2 spaces
+--  * split things into multiple files
+--  * Fix auto removal of whitespace that doesn't affect git commit verbose file
 
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
