@@ -91,6 +91,16 @@ require('packer').startup(function(use)
     cond = vim.fn.executable 'make' == 1
   }
 
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
+
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, "custom.plugins")
   if has_plugins then plugins(use) end
@@ -474,6 +484,9 @@ cmp.setup {
 
 -- Custom configs
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
+-- Custom shortcuts
+vim.keymap.set('n', '<C-t>', '<Esc>:Neotree<CR>')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
