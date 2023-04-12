@@ -20,6 +20,7 @@ return {
     config = function()
       require('telescope').setup {
         defaults = {
+          initial_mode = 'normal',
           mappings = {
             i = {
               ['<C-s>'] = "select_horizontal",
@@ -206,7 +207,8 @@ return {
   -- Snippet Engine
   {
     "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp"
+    lazy = false,
+    build = "make install_jsregexp",
   },
 
   -- Fancy code completion for a bunch of stuff
@@ -256,7 +258,7 @@ return {
     "numToStr/Comment.nvim",
     event = 'VeryLazy',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end,
   },
 
