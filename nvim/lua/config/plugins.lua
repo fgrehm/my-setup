@@ -1,4 +1,9 @@
 return {
+  {
+    "alexghergh/nvim-tmux-navigation",
+    lazy = false,
+  },
+
   -- Always on the root of git directories
   {
     "airblade/vim-rooter",
@@ -20,7 +25,6 @@ return {
     config = function()
       require('telescope').setup {
         defaults = {
-          initial_mode = 'normal',
           mappings = {
             i = {
               ['<C-s>'] = "select_horizontal",
