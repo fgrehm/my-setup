@@ -23,16 +23,25 @@ return {
     tag = "0.1.1",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      local actions = require("telescope.actions")
+      local custom = require("telescope.actions.mt").transform_mod({
+        set_normal = function(_)
+          vim.api.nvim_input("<esc>")
+        end,
+      })
+
       require('telescope').setup {
         defaults = {
           mappings = {
             i = {
-              ["<C-s>"] = "select_horizontal",
-              ["<C-v>"] = "select_vertical",
+              ["<C-s>"] = actions.select_horizontal + custom.set_normal,
+              ["<C-v>"] = actions.select_vertical + custom.set_normal,
+              ["<C-t>"] = actions.select_tab + custom.set_normal,
             },
             n = {
-              ["<C-s>"] = "select_horizontal",
-              ["<C-v>"] = "select_vertical",
+              ["<C-s>"] = actions.select_horizontal + custom.set_normal,
+              ["<C-v>"] = actions.select_vertical + custom.set_normal,
+              ["<C-t>"] = actions.select_tab + custom.set_normal,
             },
           },
         },
