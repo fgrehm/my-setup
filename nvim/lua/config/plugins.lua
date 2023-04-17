@@ -20,19 +20,19 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     lazy = false,
-    tag = '0.1.1',
+    tag = "0.1.1",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require('telescope').setup {
         defaults = {
           mappings = {
             i = {
-              ['<C-s>'] = "select_horizontal",
-              ['<C-v>'] = "select_vertical",
+              ["<C-s>"] = "select_horizontal",
+              ["<C-v>"] = "select_vertical",
             },
             n = {
-              ['<C-s>'] = "select_horizontal",
-              ['<C-v>'] = "select_vertical",
+              ["<C-s>"] = "select_horizontal",
+              ["<C-v>"] = "select_vertical",
             },
           },
         },
@@ -41,10 +41,10 @@ return {
   },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built
-  { 
-    "nvim-telescope/telescope-fzf-native.nvim", 
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
     lazy = false ,
-    build = "make", 
+    build = "make",
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require('telescope').load_extension('fzf')
@@ -68,12 +68,12 @@ return {
     "Pocco81/auto-save.nvim",
     event = 'VeryLazy',
   },
-  
+
   -- Fancier statusline
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,
-    config = function() 
+    config = function()
       require('lualine').setup {
         options = {
           -- icons_enabled = false,
@@ -118,7 +118,7 @@ return {
       }
     end
   },
-  
+
   -- Incremental parsing system and system highlighting, used by many other plugins
   {
     "nvim-treesitter/nvim-treesitter",
@@ -289,8 +289,11 @@ return {
       )
     end
   },
-  
 
+  {
+    "wsdjeg/vim-fetch",
+    lazy = false
+  }
   -------------------------
 
   -- -- {

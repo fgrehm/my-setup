@@ -4,6 +4,9 @@ export PATH="${PATH}:${HOME}/bin:${HOME}/go/bin:${HOME}/projects/oss/my-setup/ho
 # Default to nvim editor
 export EDITOR="nvim"
 
+# The unstable pkg does not add the vim alias for us
+alias vim="nvim"
+
 # My own terminal habits
 alias habits='history | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 20'
 
