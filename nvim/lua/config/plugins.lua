@@ -26,7 +26,11 @@ return {
       local actions = require("telescope.actions")
       local custom = require("telescope.actions.mt").transform_mod({
         set_normal = function(_)
-          vim.api.nvim_input("<esc>")
+          switch_to_normal = function()
+            vim.api.nvim_input("<esc>")
+            vim.cmd("stopinsert")
+          end
+          vim.defer_fn(switch_to_normal, 250)
         end,
       })
 
