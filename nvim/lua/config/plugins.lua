@@ -163,11 +163,20 @@ return {
     end,
   },
 
-  -- Color scheme
+  -- Color schemes
   {
     "sainnhe/gruvbox-material",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000,
+  },
+
+  -- Buffer focus
+  {
+    "beauwilliams/focus.nvim",
+    lazy = false,
+    config = function()
+      require("focus").setup()
+    end
   },
 
   -- Call out code annotations
