@@ -13,6 +13,9 @@ alias habits='history | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq 
 # Shortcut to reset
 alias c='clear && reset && tmux clear-history'
 
+# Better ls
+alias ll='ls -alFh'
+
 # Git aliases with completion
 source /usr/share/bash-completion/completions/git
 __git_shortcut () {
