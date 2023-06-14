@@ -16,6 +16,10 @@ alias c='clear && reset && tmux clear-history'
 # Better ls
 alias ll='ls -alFh'
 
+# Clipboard stuff
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 # Git aliases with completion
 source /usr/share/bash-completion/completions/git
 __git_shortcut () {
