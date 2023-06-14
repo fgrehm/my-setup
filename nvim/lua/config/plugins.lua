@@ -180,13 +180,13 @@ return {
   },
 
   -- Call out code annotations
-  {
-    "folke/todo-comments.nvim",
-    event = 'VeryLazy',
-    config = function()
-      require("todo-comments").setup {}
-    end,
-  },
+  -- {
+  --   "folke/todo-comments.nvim",
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     require("todo-comments").setup {}
+  --   end,
+  -- },
 
   -- Highlight same-name identifiers with the same color
   {
