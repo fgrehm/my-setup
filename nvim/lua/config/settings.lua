@@ -69,6 +69,13 @@ vim.opt.signcolumn = 'yes:1'
 vim.opt.relativenumber = false
 vim.opt.cursorline = true
 
+-- Auto reload on external file changes
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
+
 -- , as leader key
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
