@@ -3,9 +3,10 @@ all: pkg configs
 
 .PHONY: pkg
 pkg:
-	sudo add-apt-repository ppa:neovim-ppa/unstable
-	sudo apt update
-	sudo apt-get install -y neovim
+	sudo snap install neovim --classic
+	# sudo add-apt-repository ppa:neovim-ppa/unstable
+	# sudo apt update
+	# sudo apt-get install -y neovim
 
 .PHONY: configs
 configs:
