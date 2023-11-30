@@ -20,6 +20,11 @@ alias ll='ls -alFh'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+# Dev stuff
+alias dc="docker-compose"
+alias be="bundle exec"
+export DISABLE_SPRING=true
+
 # Git aliases with completion
 source /usr/share/bash-completion/completions/git
 __git_shortcut () {

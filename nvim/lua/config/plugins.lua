@@ -171,13 +171,13 @@ return {
   },
 
   -- Buffer focus
-  {
-    "beauwilliams/focus.nvim",
-    lazy = false,
-    config = function()
-      require("focus").setup()
-    end
-  },
+  -- {
+  --   "beauwilliams/focus.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("focus").setup()
+  --   end
+  -- },
 
   -- Call out code annotations
   {
@@ -195,17 +195,17 @@ return {
   },
 
   -- Different colors for parenthesis
-  {
-    "mrjones2014/nvim-ts-rainbow",
-    lazy = false,
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        rainbow = {
-          enable = true,
-        }
-      }
-    end,
-  },
+  -- {
+  --   "mrjones2014/nvim-ts-rainbow",
+  --   lazy = false,
+  --   config = function()
+  --     require'nvim-treesitter.configs'.setup {
+  --       rainbow = {
+  --         enable = true,
+  --       }
+  --     }
+  --   end,
+  -- },
 
   -- Pictograms for LSP
   {
@@ -217,17 +217,19 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    config = function()
-      require("indent_blankline").setup {
-        buftype_exclude = { 'terminal', 'nofile' },
-        filetype_exclude = { 'Trouble', 'trouble', 'noice', 'help', 'startify', 'alpha', 'dashboard', 'lazy', 'packer', 'neogitstatus', 'NvimTree', 'mason.nvim'},
-        char = '▏',
-        show_current_context = true,
-        show_current_context_start = true,  -- underline first line
-        use_treesitter = true,
-        show_trailing_blankline_indent = false,
-      }
-    end
+    main = "ibl",
+    opts = {}
+    -- config = function()
+    --   require("indent_blankline").setup {
+    --     buftype_exclude = { 'terminal', 'nofile' },
+    --     filetype_exclude = { 'Trouble', 'trouble', 'noice', 'help', 'startify', 'alpha', 'dashboard', 'lazy', 'packer', 'neogitstatus', 'NvimTree', 'mason.nvim'},
+    --     char = '▏',
+    --     show_current_context = true,
+    --     show_current_context_start = true,  -- underline first line
+    --     use_treesitter = true,
+    --     show_trailing_blankline_indent = false,
+    --   }
+    -- end
   },
 
   -- Shows a list of options of what can be done for a mapping
