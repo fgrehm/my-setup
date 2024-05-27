@@ -1,6 +1,6 @@
 require('config.settings')
-require('config.color')
 require('config.lazy')
+require('config.color')
 
 require('config.colorschemes.gruvbox')
 require('config.completion')

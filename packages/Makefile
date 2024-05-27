@@ -1,6 +1,5 @@
-PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep jq restic xclip htop ubuntu-restricted-extras parallel
+PACKAGES := tmux git curl chromium-browser apt-transport-https ca-certificates build-essential fzf ripgrep jq xclip htop ubuntu-restricted-extras parallel
 SNAPS := slack spotify
-CLASSIC_SNAPS := go
 
 .PHONY: all
 all: dist-upgrade packages snaps
@@ -17,4 +16,3 @@ packages:
 .PHONY: snaps
 snaps:
 	sudo snap install $(SNAPS)
-	sudo snap install --classic $(CLASSIC_SNAPS)
