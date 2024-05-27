@@ -1,5 +1,5 @@
 .PHONY: all
-all: docker gopls
+all: docker
 
 .PHONY: docker
 docker:
@@ -9,7 +9,3 @@ docker:
 	sudo apt-cache policy docker-ce
 	sudo apt-get install docker-ce docker-compose
 	sudo usermod -aG docker "$${USER}"
-
-.PHONY: gopls
-gopls:
-	go install golang.org/x/tools/gopls@latest
